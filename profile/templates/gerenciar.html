@@ -13,10 +13,10 @@
     <div class="container">
         <div class="row">
             {% if messages %}
-    {% for message in messages %}
-            <div class="alert {{ message.tags}}">{( message )}</div>
-        {% endfor %}
-    {% endif %}        
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{( message )}</div>
+                {% endfor %}
+            {% endif %}        
             <div class="col-md-5">
                 <p class="fonte-destaque">Suas contas</p>
                 
@@ -28,7 +28,7 @@
                         <div class="lista-contas-main">
                             <span><img width="10%" src="{{conta.icone.url}}">&nbsp&nbsp{{conta.apelido}}</span>
                             
-                            <span class="total-conta positivo ">R$ {{conta.valor}}&nbsp&nbsp&nbsp <a href="#"><img src="{% static 'profile/img/exit.png' %}"></a></span>
+                            <span class="total-conta positivo ">R$ {{conta.valor}}&nbsp&nbsp&nbsp <a href="profile/deletar_banco/{{conta.id}}"><img src="{% static 'profile/img/exit.png' %}"></a></span>
                         </div>
                         <br>
                         {% endfor %}
